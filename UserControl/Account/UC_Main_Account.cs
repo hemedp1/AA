@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace AA.UserControl
 {
-    public partial class UC_Main_Account : System.Windows.Forms.UserControl, ICrudForm
+    public partial class UC_Main_Account : System.Windows.Forms.UserControl, ICrudForm, IFilterableForm
     {
         public UC_Main_Account()
         {
@@ -19,7 +19,7 @@ namespace AA.UserControl
         }
         public void SaveData()
         {
-            MessageBox.Show("acaount");
+            MessageBox.Show("Save Data Test");
         }
         private void T1_Load(object sender, EventArgs e)
         {
@@ -28,5 +28,12 @@ namespace AA.UserControl
         public void AddNew() { }
         public void DeleteData() { }
         public void RefreshData() { }
+        public void ToggleFilter() { }
+        public void Cancel() { }
+
+        private void btn_Miscellaneous_Claim_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

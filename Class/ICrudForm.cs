@@ -12,9 +12,11 @@ namespace AA
         void SaveData();
         void DeleteData();
         void RefreshData();
+        void Cancel();
+    }
 
-      
-
-       
+    public interface IFilterableForm
+    {
+        void ToggleFilter();
     }
 }

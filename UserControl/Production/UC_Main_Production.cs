@@ -25,7 +25,8 @@ namespace AA.UserControl
         public void AddNew() { }
         public void DeleteData() { }
         public void RefreshData() { }
-
+        public void ToggleFilter() { }
+        public void Cancel() { }
         private void UC_Main_Production_Load(object sender, EventArgs e)
         {
 

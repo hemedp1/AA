@@ -87,6 +87,7 @@
             this.btn_Miscellaneous_Claim.Tag = "Miscellaneous Claim";
             this.btn_Miscellaneous_Claim.Text = "            Miscellaneous Claim";
             this.btn_Miscellaneous_Claim.UseVisualStyleBackColor = true;
+            this.btn_Miscellaneous_Claim.Click += new System.EventHandler(this.btn_Miscellaneous_Claim_Click);
             // 
             // UC_Main_Account
             // 

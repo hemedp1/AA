@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace AA.UserControl
 {
-    public partial class UC_Main_EDP : System.Windows.Forms.UserControl, ICrudForm
+    public partial class UC_Main_EDP : System.Windows.Forms.UserControl, ICrudForm, IFilterableForm
     {
         public UC_Main_EDP()
         {
@@ -23,8 +23,10 @@ namespace AA.UserControl
         public void AddNew() { }
         public void DeleteData() { }
         public void RefreshData() { }
+        public void ToggleFilter() { }
+        public void Cancel() { }
 
-        private void UC_Main_EDP_Load(object sender, EventArgs e)
+        private void btn_email_Click(object sender, EventArgs e)
         {
 
         }

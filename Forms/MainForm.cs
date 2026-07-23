@@ -13,73 +13,102 @@ namespace AA
 {
     public partial class MainForm : Form
     {
-        UC_Toolbar bar = new UC_Toolbar();
-        Panel menu = new Panel();
-        Panel body = new Panel();
-        Button btnItem = new Button() 
-        { 
-            Text = "ITEMMASTER", Width = 150, Top = 20, Left = 10 
-        };
-        Button btnBom = new Button() 
-        { 
-            Text = "BOMMASTER", Width = 150, Top = 60, Left = 10 
-        };
         public MainForm()
         {
             InitializeComponent();
-            // Text = "AA System"; Width = 1000; Height = 600;
-            //  Controls.Add(bar);
-            // menu.Dock = DockStyle.Left; menu.Width = 180; body.Dock = DockStyle.Fill;
-            // Controls.Add(body); Controls.Add(menu);
-            //  menu.Controls.Add(btnItem); menu.Controls.Add(btnBom);
-            //  btnItem.Click += (s, e) => OpenChild(new FrmItem());
-            //  btnBom.Click += (s, e) => OpenChild(new FrmBOM());
-        }
-        void OpenChild(Form frm) 
-        { 
-            body.Controls.Clear(); 
-            frm.TopLevel = false; 
-            frm.FormBorderStyle = FormBorderStyle.None; 
-            frm.Dock = DockStyle.Fill; 
-            body.Controls.Add(frm); 
-            frm.Show(); bar.CurrentForm = (ICrudForm)frm; }
-
-        private void btn_Menu_Click(object sender, EventArgs e)
-        {
-            left_Side_Bar_Panel.Visible = !left_Side_Bar_Panel.Visible;
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+
+
+
+        #region Screen Loader & Toolbar Sync
+        /// <summary>
+        /// Gets the active User Control loaded inside the currently selected TabPage.
+        /// </summary>
+        private Control GetActiveScreen()
         {
-            left_Side_Bar_Panel.Visible = false;
-
-            //treeView1.Nodes.Clear();
-
-            //TreeNode master = new TreeNode("Master Data"); 
-            //master.Nodes.Add("T1"); 
-            //master.Nodes.Add("T2");
-
-            //TreeNode booking = new TreeNode("Booking"); 
-            //booking.Nodes.Add("Car Booking"); 
-            //booking.Nodes.Add("Meeting Room"); 
-            //treeView1.Nodes.Add(master); 
-            //treeView1.Nodes.Add(booking); 
-            //treeView1.ExpandAll();
-        }
-        /*private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            switch (e.Node.Text)
+            if (tabControlMain.SelectedTab != null && tabControlMain.SelectedTab.Controls.Count > 0)
             {
-                case "T1":
-                    OpenScreen(new T1());
-                    break;
-
-                case "T2":
-                    OpenScreen(new T2());
-                    break;
-
+                return tabControlMain.SelectedTab.Controls[0];
             }
-        }*/
+            return null;
+        }
+
+
+        /// <summary>
+        /// Opens a User Control inside a tab.
+        /// If already open, focuses the existing tab instead of opening a duplicate.
+        /// </summary>
+        private void OpenScreen(System.Windows.Forms.UserControl screen)
+        {
+
+            // Check if tab is already open    
+            foreach (TabPage tab in tabControlMain.TabPages)
+            {
+                if (tab.Text == title)
+                {
+                    tabControlMain.SelectedTab = tab; // Switch to existing tab
+                    return;
+                }
+            }
+
+            // Create new tab page if not open yet
+            TabPage newTab = new TabPage(title);
+            screen.Dock = DockStyle.Fill;
+            newTab.Controls.Add(screen);
+
+            tabControlMain.TabPages.Add(newTab);
+            tabControlMain.SelectedTab = newTab;
+
+            UpdateToolbarState();
+        }
+
+
+        private void UpdateToolbarState()
+        {
+            if (panelMain.Controls.Count == 0)
+            {
+                DisableAllToolbarButtons();
+                return;
+            }
+            if (panelMain.Controls.Count == 0) return;
+
+            Control activeScreen = panelMain.Controls[0];
+
+            // Check if current screen supports CRUD
+            bool isCrud = activeScreen is ICrudForm;
+            if (btn_Create != null) btn_Create.Enabled = isCrud;
+            if (btn_Save != null) btn_Save.Enabled = isCrud;
+            if (btn_Delete != null) btn_Delete.Enabled = isCrud;
+            if (btn_Refresh != null) btn_Refresh.Enabled = isCrud;
+            if (btn_Cancel != null) btn_Cancel.Enabled = isCrud;
+
+            // Check if current screen supports Filtering
+            bool isFilterable = activeScreen is IFilterableForm;
+            if (btn_Filter != null) btn_Filter.Enabled = isFilterable;
+
+        }
+        private void DisableAllToolbarButtons()
+        {
+            if (btn_Create != null) btn_Create.Enabled = false;
+            if (btn_Save != null) btn_Save.Enabled = false;
+            if (btn_Delete != null) btn_Delete.Enabled = false;
+            if (btn_Refresh != null) btn_Refresh.Enabled = false;
+            if (btn_Cancel != null) btn_Cancel.Enabled = false;
+            if (btn_Filter != null) btn_Filter.Enabled = false;
+        }
+
+
+        #endregion
+
+        #region Global Toolbar Action Handlers
+        private void btn_Create_Click(object sender, EventArgs e)
+        {
+            if (panelMain.Controls.Count > 0 && panelMain.Controls[0] is ICrudForm crud)
+            {
+                crud.AddNew();
+            }
+        }
         private void btn_Save_Click(object sender, EventArgs e)
         {
             if (panelMain.Controls.Count > 0)
@@ -92,15 +121,62 @@ namespace AA
                 }
                 else
                 {
-                    MessageBox.Show("This screen has no save function.");
+                    MessageBox.Show("This screen does not support saving.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
-        private void OpenScreen(System.Windows.Forms.UserControl screen)
+        private void btn_Delete_Click(object sender, EventArgs e)
         {
-            panelMain.Controls.Clear();
-            screen.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(screen);
+            if (panelMain.Controls.Count > 0 && panelMain.Controls[0] is ICrudForm crud)
+            {
+                crud.DeleteData();
+            }
+        }
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            if (panelMain.Controls.Count > 0 && panelMain.Controls[0] is ICrudForm crud)
+            {
+                crud.RefreshData();
+            }
+        }
+        private void btn_Filter_Click(object sender, EventArgs e)
+        {
+            // Check if there is an active User Control loaded in panelMain
+            if (panelMain.Controls.Count > 0)
+            {
+                Control activeScreen = panelMain.Controls[0];
+
+                // Check if the current screen supports IFilterableForm
+                if (activeScreen is IFilterableForm filterable)
+                {
+                    filterable.ToggleFilter(); // Calls the filter method on the User Control
+                }
+                else
+                {
+                    MessageBox.Show("This screen does not support search or filtering.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            if (panelMain.Controls.Count > 0 && panelMain.Controls[0] is ICrudForm crud)
+            {
+                crud.Cancel();
+            }
+        }
+        #endregion
+
+
+        #region Form Events & Navigation Controls
+        private void btn_Menu_Click(object sender, EventArgs e)
+        {
+            left_Side_Bar_Panel.Visible = !left_Side_Bar_Panel.Visible;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            left_Side_Bar_Panel.Visible = false;
+            DisableAllToolbarButtons();
         }
 
         private void btn_Account_Click(object sender, EventArgs e)
@@ -195,6 +271,6 @@ namespace AA
                 }
             }
         }
-
+        #endregion
     }
 }

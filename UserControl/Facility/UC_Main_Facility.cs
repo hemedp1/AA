@@ -28,6 +28,8 @@ namespace AA.UserControl
         public void AddNew() { }
         public void DeleteData() { }
         public void RefreshData() { }
+        public void ToggleFilter() { }
+        public void Cancel() { }
 
     }
 }

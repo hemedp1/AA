@@ -21,10 +21,12 @@ namespace AA.UserControl
         {
             MessageBox.Show("hr");
         }
-     
+
         public void AddNew() { }
         public void DeleteData() { }
         public void RefreshData() { }
+        public void ToggleFilter() { }
+        public void Cancel() { }
 
         private void UC_Main_HR_Admin_Load(object sender, EventArgs e)
         {

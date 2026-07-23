@@ -50,8 +50,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Approve = new System.Windows.Forms.Button();
             this.btn_Cancel = new System.Windows.Forms.Button();
+            this.btn_Refresh = new System.Windows.Forms.Button();
+            this.btn_Filter = new System.Windows.Forms.Button();
+            this.btn_Approve = new System.Windows.Forms.Button();
             this.btn_Reject = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
@@ -61,12 +63,14 @@
             this.btn_Menu = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
             this.toolTip_btn = new System.Windows.Forms.ToolTip(this.components);
+            this.tabControlMain = new System.Windows.Forms.TabControl();
             this.panel2.SuspendLayout();
             this.left_Side_Bar_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.Panel_Main_Search.SuspendLayout();
+            this.panelMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -74,9 +78,10 @@
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel2.Controls.Add(this.label3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 1008);
+            this.panel2.Location = new System.Drawing.Point(0, 655);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1924, 42);
+            this.panel2.Size = new System.Drawing.Size(1283, 27);
             this.panel2.TabIndex = 2;
             // 
             // label3
@@ -84,9 +89,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 13);
+            this.label3.Location = new System.Drawing.Point(2, 8);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(413, 20);
+            this.label3.Size = new System.Drawing.Size(269, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "Copyrights © 2025. All Rights Reserved by HEM EDP ";
             // 
@@ -111,18 +117,19 @@
             this.left_Side_Bar_Panel.Controls.Add(this.label1);
             this.left_Side_Bar_Panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.left_Side_Bar_Panel.Location = new System.Drawing.Point(0, 0);
+            this.left_Side_Bar_Panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.left_Side_Bar_Panel.Name = "left_Side_Bar_Panel";
-            this.left_Side_Bar_Panel.Size = new System.Drawing.Size(183, 1008);
+            this.left_Side_Bar_Panel.Size = new System.Drawing.Size(118, 655);
             this.left_Side_Bar_Panel.TabIndex = 3;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(106, 7);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(71, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(54, 56);
+            this.pictureBox1.Size = new System.Drawing.Size(36, 36);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
@@ -136,9 +143,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(0, 814);
+            this.button1.Location = new System.Drawing.Point(0, 525);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 62);
+            this.button1.Size = new System.Drawing.Size(118, 40);
             this.button1.TabIndex = 32;
             this.button1.Text = "Warehouse";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -154,9 +162,10 @@
             this.btn_Sales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Sales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Sales.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_Sales.Location = new System.Drawing.Point(0, 752);
+            this.btn_Sales.Location = new System.Drawing.Point(0, 485);
+            this.btn_Sales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Sales.Name = "btn_Sales";
-            this.btn_Sales.Size = new System.Drawing.Size(183, 62);
+            this.btn_Sales.Size = new System.Drawing.Size(118, 40);
             this.btn_Sales.TabIndex = 29;
             this.btn_Sales.Text = "Sales";
             this.btn_Sales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -173,9 +182,10 @@
             this.btn_QC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_QC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_QC.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_QC.Location = new System.Drawing.Point(0, 690);
+            this.btn_QC.Location = new System.Drawing.Point(0, 445);
+            this.btn_QC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_QC.Name = "btn_QC";
-            this.btn_QC.Size = new System.Drawing.Size(183, 62);
+            this.btn_QC.Size = new System.Drawing.Size(118, 40);
             this.btn_QC.TabIndex = 28;
             this.btn_QC.Text = "QC";
             this.btn_QC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -192,9 +202,10 @@
             this.btn_Purchasing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Purchasing.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Purchasing.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_Purchasing.Location = new System.Drawing.Point(0, 628);
+            this.btn_Purchasing.Location = new System.Drawing.Point(0, 405);
+            this.btn_Purchasing.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Purchasing.Name = "btn_Purchasing";
-            this.btn_Purchasing.Size = new System.Drawing.Size(183, 62);
+            this.btn_Purchasing.Size = new System.Drawing.Size(118, 40);
             this.btn_Purchasing.TabIndex = 27;
             this.btn_Purchasing.Text = "Purchasing";
             this.btn_Purchasing.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -211,9 +222,10 @@
             this.btn_Production.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Production.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Production.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_Production.Location = new System.Drawing.Point(0, 566);
+            this.btn_Production.Location = new System.Drawing.Point(0, 365);
+            this.btn_Production.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Production.Name = "btn_Production";
-            this.btn_Production.Size = new System.Drawing.Size(183, 62);
+            this.btn_Production.Size = new System.Drawing.Size(118, 40);
             this.btn_Production.TabIndex = 26;
             this.btn_Production.Text = "Production";
             this.btn_Production.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -230,9 +242,10 @@
             this.btn_Planning.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Planning.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Planning.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_Planning.Location = new System.Drawing.Point(0, 504);
+            this.btn_Planning.Location = new System.Drawing.Point(0, 325);
+            this.btn_Planning.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Planning.Name = "btn_Planning";
-            this.btn_Planning.Size = new System.Drawing.Size(183, 62);
+            this.btn_Planning.Size = new System.Drawing.Size(118, 40);
             this.btn_Planning.TabIndex = 24;
             this.btn_Planning.Text = "Planning";
             this.btn_Planning.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -249,9 +262,10 @@
             this.btn_ProductionEngineering.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ProductionEngineering.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ProductionEngineering.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_ProductionEngineering.Location = new System.Drawing.Point(0, 442);
+            this.btn_ProductionEngineering.Location = new System.Drawing.Point(0, 285);
+            this.btn_ProductionEngineering.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_ProductionEngineering.Name = "btn_ProductionEngineering";
-            this.btn_ProductionEngineering.Size = new System.Drawing.Size(183, 62);
+            this.btn_ProductionEngineering.Size = new System.Drawing.Size(118, 40);
             this.btn_ProductionEngineering.TabIndex = 23;
             this.btn_ProductionEngineering.Text = "P. Engineering";
             this.btn_ProductionEngineering.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -268,9 +282,10 @@
             this.btn_ISO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ISO.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ISO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_ISO.Location = new System.Drawing.Point(0, 380);
+            this.btn_ISO.Location = new System.Drawing.Point(0, 245);
+            this.btn_ISO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_ISO.Name = "btn_ISO";
-            this.btn_ISO.Size = new System.Drawing.Size(183, 62);
+            this.btn_ISO.Size = new System.Drawing.Size(118, 40);
             this.btn_ISO.TabIndex = 22;
             this.btn_ISO.Text = "ISO";
             this.btn_ISO.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -287,9 +302,10 @@
             this.btn_HRAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_HRAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_HRAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_HRAdmin.Location = new System.Drawing.Point(0, 318);
+            this.btn_HRAdmin.Location = new System.Drawing.Point(0, 205);
+            this.btn_HRAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_HRAdmin.Name = "btn_HRAdmin";
-            this.btn_HRAdmin.Size = new System.Drawing.Size(183, 62);
+            this.btn_HRAdmin.Size = new System.Drawing.Size(118, 40);
             this.btn_HRAdmin.TabIndex = 17;
             this.btn_HRAdmin.Text = "HR && Admin";
             this.btn_HRAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -306,9 +322,10 @@
             this.btn_Facility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Facility.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Facility.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_Facility.Location = new System.Drawing.Point(0, 256);
+            this.btn_Facility.Location = new System.Drawing.Point(0, 165);
+            this.btn_Facility.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Facility.Name = "btn_Facility";
-            this.btn_Facility.Size = new System.Drawing.Size(183, 62);
+            this.btn_Facility.Size = new System.Drawing.Size(118, 40);
             this.btn_Facility.TabIndex = 11;
             this.btn_Facility.Text = "Facility";
             this.btn_Facility.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -325,9 +342,10 @@
             this.btn_Engineering.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Engineering.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Engineering.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_Engineering.Location = new System.Drawing.Point(0, 194);
+            this.btn_Engineering.Location = new System.Drawing.Point(0, 125);
+            this.btn_Engineering.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Engineering.Name = "btn_Engineering";
-            this.btn_Engineering.Size = new System.Drawing.Size(183, 62);
+            this.btn_Engineering.Size = new System.Drawing.Size(118, 40);
             this.btn_Engineering.TabIndex = 3;
             this.btn_Engineering.Text = "Engineering";
             this.btn_Engineering.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -344,9 +362,10 @@
             this.btn_EDP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_EDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EDP.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_EDP.Location = new System.Drawing.Point(0, 132);
+            this.btn_EDP.Location = new System.Drawing.Point(0, 85);
+            this.btn_EDP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_EDP.Name = "btn_EDP";
-            this.btn_EDP.Size = new System.Drawing.Size(183, 62);
+            this.btn_EDP.Size = new System.Drawing.Size(118, 40);
             this.btn_EDP.TabIndex = 2;
             this.btn_EDP.Text = "EDP";
             this.btn_EDP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -363,9 +382,10 @@
             this.btn_Account.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Account.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_Account.Location = new System.Drawing.Point(0, 70);
+            this.btn_Account.Location = new System.Drawing.Point(0, 45);
+            this.btn_Account.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Account.Name = "btn_Account";
-            this.btn_Account.Size = new System.Drawing.Size(183, 62);
+            this.btn_Account.Size = new System.Drawing.Size(118, 40);
             this.btn_Account.TabIndex = 0;
             this.btn_Account.Text = "Account";
             this.btn_Account.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -380,8 +400,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(183, 70);
+            this.label1.Size = new System.Drawing.Size(118, 45);
             this.label1.TabIndex = 1;
             this.label1.Text = "HEM";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -392,44 +413,31 @@
             this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.btn_Menu);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(183, 0);
+            this.panel3.Location = new System.Drawing.Point(118, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1741, 70);
+            this.panel3.Size = new System.Drawing.Size(1165, 45);
             this.panel3.TabIndex = 4;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
-            this.panel1.Controls.Add(this.btn_Approve);
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel1.Controls.Add(this.btn_Cancel);
+            this.panel1.Controls.Add(this.btn_Refresh);
+            this.panel1.Controls.Add(this.btn_Filter);
+            this.panel1.Controls.Add(this.btn_Approve);
             this.panel1.Controls.Add(this.btn_Reject);
             this.panel1.Controls.Add(this.btn_Delete);
             this.panel1.Controls.Add(this.btn_Save);
             this.panel1.Controls.Add(this.btn_Create);
             this.panel1.Controls.Add(this.Panel_Main_Search);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(70, 0);
+            this.panel1.Location = new System.Drawing.Point(47, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1671, 70);
+            this.panel1.Size = new System.Drawing.Size(1118, 45);
             this.panel1.TabIndex = 5;
-            // 
-            // btn_Approve
-            // 
-            this.btn_Approve.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btn_Approve.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Approve.BackgroundImage")));
-            this.btn_Approve.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_Approve.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_Approve.FlatAppearance.BorderColor = System.Drawing.Color.MidnightBlue;
-            this.btn_Approve.FlatAppearance.BorderSize = 0;
-            this.btn_Approve.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
-            this.btn_Approve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Approve.Location = new System.Drawing.Point(1536, 0);
-            this.btn_Approve.Name = "btn_Approve";
-            this.btn_Approve.Size = new System.Drawing.Size(70, 70);
-            this.btn_Approve.TabIndex = 5;
-            this.btn_Approve.Tag = "fff";
-            this.toolTip_btn.SetToolTip(this.btn_Approve, "Approve");
-            this.btn_Approve.UseVisualStyleBackColor = false;
             // 
             // btn_Cancel
             // 
@@ -441,13 +449,74 @@
             this.btn_Cancel.FlatAppearance.BorderSize = 0;
             this.btn_Cancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
             this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Cancel.Location = new System.Drawing.Point(504, 0);
+            this.btn_Cancel.Location = new System.Drawing.Point(418, 0);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(61, 70);
-            this.btn_Cancel.TabIndex = 7;
+            this.btn_Cancel.Size = new System.Drawing.Size(41, 45);
+            this.btn_Cancel.TabIndex = 11;
             this.btn_Cancel.Tag = "fff";
             this.toolTip_btn.SetToolTip(this.btn_Cancel, "Cancel");
             this.btn_Cancel.UseVisualStyleBackColor = false;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
+            // 
+            // btn_Refresh
+            // 
+            this.btn_Refresh.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Refresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Refresh.BackgroundImage")));
+            this.btn_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Refresh.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_Refresh.FlatAppearance.BorderColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Refresh.FlatAppearance.BorderSize = 0;
+            this.btn_Refresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Refresh.Location = new System.Drawing.Point(377, 0);
+            this.btn_Refresh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Refresh.Name = "btn_Refresh";
+            this.btn_Refresh.Size = new System.Drawing.Size(41, 45);
+            this.btn_Refresh.TabIndex = 10;
+            this.btn_Refresh.Tag = "fff";
+            this.toolTip_btn.SetToolTip(this.btn_Refresh, "Refresh");
+            this.btn_Refresh.UseVisualStyleBackColor = false;
+            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
+            // 
+            // btn_Filter
+            // 
+            this.btn_Filter.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Filter.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Filter.BackgroundImage")));
+            this.btn_Filter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Filter.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_Filter.FlatAppearance.BorderColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Filter.FlatAppearance.BorderSize = 0;
+            this.btn_Filter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_Filter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Filter.Location = new System.Drawing.Point(336, 0);
+            this.btn_Filter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Filter.Name = "btn_Filter";
+            this.btn_Filter.Size = new System.Drawing.Size(41, 45);
+            this.btn_Filter.TabIndex = 9;
+            this.btn_Filter.Tag = "fff";
+            this.toolTip_btn.SetToolTip(this.btn_Filter, "Filter");
+            this.btn_Filter.UseVisualStyleBackColor = false;
+            this.btn_Filter.Click += new System.EventHandler(this.btn_Filter_Click);
+            // 
+            // btn_Approve
+            // 
+            this.btn_Approve.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Approve.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Approve.BackgroundImage")));
+            this.btn_Approve.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Approve.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_Approve.FlatAppearance.BorderColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Approve.FlatAppearance.BorderSize = 0;
+            this.btn_Approve.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_Approve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Approve.Location = new System.Drawing.Point(1028, 0);
+            this.btn_Approve.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Approve.Name = "btn_Approve";
+            this.btn_Approve.Size = new System.Drawing.Size(47, 45);
+            this.btn_Approve.TabIndex = 5;
+            this.btn_Approve.Tag = "fff";
+            this.toolTip_btn.SetToolTip(this.btn_Approve, "Approve");
+            this.btn_Approve.UseVisualStyleBackColor = false;
             // 
             // btn_Reject
             // 
@@ -459,9 +528,10 @@
             this.btn_Reject.FlatAppearance.BorderSize = 0;
             this.btn_Reject.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
             this.btn_Reject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Reject.Location = new System.Drawing.Point(1606, 0);
+            this.btn_Reject.Location = new System.Drawing.Point(1075, 0);
+            this.btn_Reject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Reject.Name = "btn_Reject";
-            this.btn_Reject.Size = new System.Drawing.Size(65, 70);
+            this.btn_Reject.Size = new System.Drawing.Size(43, 45);
             this.btn_Reject.TabIndex = 6;
             this.btn_Reject.Tag = "fff";
             this.toolTip_btn.SetToolTip(this.btn_Reject, "Reject");
@@ -477,13 +547,15 @@
             this.btn_Delete.FlatAppearance.BorderSize = 0;
             this.btn_Delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
             this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Delete.Location = new System.Drawing.Point(446, 0);
+            this.btn_Delete.Location = new System.Drawing.Point(297, 0);
+            this.btn_Delete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(58, 70);
+            this.btn_Delete.Size = new System.Drawing.Size(39, 45);
             this.btn_Delete.TabIndex = 2;
             this.btn_Delete.Tag = "fff";
             this.toolTip_btn.SetToolTip(this.btn_Delete, "Delete");
             this.btn_Delete.UseVisualStyleBackColor = false;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Save
             // 
@@ -495,9 +567,10 @@
             this.btn_Save.FlatAppearance.BorderSize = 0;
             this.btn_Save.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
             this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Save.Location = new System.Drawing.Point(381, 0);
+            this.btn_Save.Location = new System.Drawing.Point(254, 0);
+            this.btn_Save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(65, 70);
+            this.btn_Save.Size = new System.Drawing.Size(43, 45);
             this.btn_Save.TabIndex = 1;
             this.toolTip_btn.SetToolTip(this.btn_Save, "Save");
             this.btn_Save.UseVisualStyleBackColor = false;
@@ -513,28 +586,32 @@
             this.btn_Create.FlatAppearance.BorderSize = 0;
             this.btn_Create.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
             this.btn_Create.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Create.Location = new System.Drawing.Point(323, 0);
+            this.btn_Create.Location = new System.Drawing.Point(215, 0);
+            this.btn_Create.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Create.Name = "btn_Create";
-            this.btn_Create.Size = new System.Drawing.Size(58, 70);
+            this.btn_Create.Size = new System.Drawing.Size(39, 45);
             this.btn_Create.TabIndex = 3;
             this.toolTip_btn.SetToolTip(this.btn_Create, "Create");
             this.btn_Create.UseVisualStyleBackColor = false;
+            this.btn_Create.Click += new System.EventHandler(this.btn_Create_Click);
             // 
             // Panel_Main_Search
             // 
             this.Panel_Main_Search.Controls.Add(this.txt_Main_Search);
             this.Panel_Main_Search.Dock = System.Windows.Forms.DockStyle.Left;
             this.Panel_Main_Search.Location = new System.Drawing.Point(0, 0);
+            this.Panel_Main_Search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Panel_Main_Search.Name = "Panel_Main_Search";
-            this.Panel_Main_Search.Size = new System.Drawing.Size(323, 70);
+            this.Panel_Main_Search.Size = new System.Drawing.Size(215, 45);
             this.Panel_Main_Search.TabIndex = 8;
             // 
             // txt_Main_Search
             // 
             this.txt_Main_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Main_Search.Location = new System.Drawing.Point(6, 14);
+            this.txt_Main_Search.Location = new System.Drawing.Point(4, 9);
+            this.txt_Main_Search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_Main_Search.Name = "txt_Main_Search";
-            this.txt_Main_Search.Size = new System.Drawing.Size(304, 30);
+            this.txt_Main_Search.Size = new System.Drawing.Size(204, 23);
             this.txt_Main_Search.TabIndex = 4;
             this.toolTip_btn.SetToolTip(this.txt_Main_Search, "Search");
             this.txt_Main_Search.TextChanged += new System.EventHandler(this.txt_Main_Search_TextChanged);
@@ -550,8 +627,9 @@
             this.btn_Menu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
             this.btn_Menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Menu.Location = new System.Drawing.Point(0, 0);
+            this.btn_Menu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Menu.Name = "btn_Menu";
-            this.btn_Menu.Size = new System.Drawing.Size(70, 70);
+            this.btn_Menu.Size = new System.Drawing.Size(47, 45);
             this.btn_Menu.TabIndex = 4;
             this.btn_Menu.Tag = "fff";
             this.toolTip_btn.SetToolTip(this.btn_Menu, "Menu");
@@ -560,21 +638,33 @@
             // 
             // panelMain
             // 
+            this.panelMain.Controls.Add(this.tabControlMain);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(183, 70);
+            this.panelMain.Location = new System.Drawing.Point(118, 45);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1741, 938);
+            this.panelMain.Size = new System.Drawing.Size(1165, 610);
             this.panelMain.TabIndex = 5;
+            // 
+            // tabControlMain
+            // 
+            this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlMain.Location = new System.Drawing.Point(0, 0);
+            this.tabControlMain.Name = "tabControlMain";
+            this.tabControlMain.SelectedIndex = 0;
+            this.tabControlMain.Size = new System.Drawing.Size(1165, 610);
+            this.tabControlMain.TabIndex = 0;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1050);
+            this.ClientSize = new System.Drawing.Size(1283, 682);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.left_Side_Bar_Panel);
             this.Controls.Add(this.panel2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
             this.Text = "HEM Admin Accessibility";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -586,6 +676,7 @@
             this.panel1.ResumeLayout(false);
             this.Panel_Main_Search.ResumeLayout(false);
             this.Panel_Main_Search.PerformLayout();
+            this.panelMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -619,8 +710,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_Reject;
         private System.Windows.Forms.Button btn_Approve;
-        private System.Windows.Forms.Button btn_Cancel;
         private System.Windows.Forms.Panel Panel_Main_Search;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btn_Filter;
+        private System.Windows.Forms.Button btn_Cancel;
+        private System.Windows.Forms.Button btn_Refresh;
+        private System.Windows.Forms.TabControl tabControlMain;
     }
 }

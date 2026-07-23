@@ -21,14 +21,11 @@ namespace AA.UserControl
         {
             MessageBox.Show("WAREHOUSE");
         }
-        private void T1_Load(object sender, EventArgs e)
-        {
-
-        }
         public void AddNew() { }
         public void DeleteData() { }
         public void RefreshData() { }
-
+        public void ToggleFilter() { }
+        public void Cancel() { }
         private void UC_Main_Warehouse_Load(object sender, EventArgs e)
         {
 
